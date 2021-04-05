@@ -43,10 +43,10 @@ steps:
       z: 4
       i: 2  
     type: coefficients 
-  - values: 
+  - MinMax: 
       min: 0
       max: 2 
-    type: values
+    type: MinMax
   outputs:
   - name: results
     type: output
@@ -54,5 +54,5 @@ steps:
 types:
 - specs
 - coefficients
-- values
+- MinMax
 - output
