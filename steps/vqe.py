@@ -58,10 +58,10 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
     else:
         coefficients_dict = coefficients
 
-    if isinstance(min_value, str):
-        min_value = yaml.load(min_value, Loader=yaml.SafeLoader)
-    if isinstance(max_value, str):
-        max_value = yaml.load(max_value, Loader=yaml.SafeLoader)
+    if isinstance(MinMax, str):
+        minmax_dict = yaml.load(MinMax, Loader=yaml.SafeLoader)
+    else:
+        minmax_dict = MinMax
     # Build the min_value and max_value we passed to the step
     # if isinstance(MinMax, str):
     #     values_dict = yaml.load(MinMax, Loader=yaml.SafeLoader)
