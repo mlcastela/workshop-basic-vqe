@@ -58,10 +58,10 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
     else:
         coefficients_dict = coefficients
 
-    if isinstance(MinMax, str):
-        minmax_dict = yaml.load(MinMax, Loader=yaml.SafeLoader)
-    else:
-        minmax_dict = MinMax
+    # if isinstance(MinMax, str):
+    #     minmax_dict = yaml.load(MinMax, Loader=yaml.SafeLoader)
+    # else:
+    #     minmax_dict = MinMax
 
     with open("jojo.json", "w") as f:
         f.write(json.dumps("Hello man", indent=2))
@@ -84,7 +84,7 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
         circuits,
         coefficients_dict,
         min_value= min_value,
-        min_value =max_value*np.pi()
+        min_value =max_value
     )
 
     # Find the index of the minimum energy
@@ -120,8 +120,8 @@ def search(
     param: Parameter,
     circuits: Dict[str, QuantumCircuit],
     coefficients: Dict[str, int],
-    min_value,
-    max_value,
+    min_value=0,
+    max_value=1,
     samples=10000,
 ):
     results = []
