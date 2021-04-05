@@ -86,8 +86,8 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2*np.pi()):
             "theta": values[minimum_idx],
         },
         "message": "where the fuck is the output!",
-        "min_value": valueOne,
-        "min_value": valueTwo,
+        # "min_value": valueOne,
+        # "min_value": valueTwo,
         "results": results,
         "values": values.tolist(),
     }
