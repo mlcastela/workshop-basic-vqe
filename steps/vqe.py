@@ -112,7 +112,7 @@ def search(
     circuits: Dict[str, QuantumCircuit],
     coefficients: Dict[str, int],
     min_value=values_dict["min"],
-    max_value=values_dict["max"],
+    max_value=values_dict["max"]* np.pi,
     samples=10000,
 ):
     results = []
