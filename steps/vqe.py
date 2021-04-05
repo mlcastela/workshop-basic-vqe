@@ -65,8 +65,6 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
             "max_value": max_value,
         },
     }    
-    with open("jojo.json", "w") as f:
-        json.dump(test, f)
 
 
     # Build the circuits
@@ -94,6 +92,9 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
             "value": results[minimum_idx],
             "theta": values[minimum_idx],
         },
+        "message": "where the fuck is the output!",
+        "min_value": min_value,
+        "min_value": max_value,
         "results": results,
         "values": values.tolist(),
     }
