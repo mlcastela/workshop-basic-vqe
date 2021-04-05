@@ -88,7 +88,7 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
         "min_value": min_value,
         "min_value": max_value,
         "results": results,
-        "MinMax_dict": MinMax_dict,
+        # "MinMax_dict": MinMax_dict,
         "values": values.tolist(),
     }
 
