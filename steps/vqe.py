@@ -75,8 +75,7 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
         theta,
         circuits,
         coefficients_dict,
-        min_value=values_dict["min"],
-        max_value=values_dict["max"],
+        values_dict
     )
 
     # Find the index of the minimum energy
@@ -112,8 +111,8 @@ def search(
     param: Parameter,
     circuits: Dict[str, QuantumCircuit],
     coefficients: Dict[str, int],
-    min_value=0,
-    max_value=1,
+    min_value=values_dict["min"],
+    max_value=values_dict["max"],
     samples=10000,
 ):
     results = []
