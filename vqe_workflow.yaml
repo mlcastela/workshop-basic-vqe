@@ -45,7 +45,7 @@ steps:
     type: coefficients 
   - min_value: 0.0
     type: float
-  - max_value: 6.0
+  - max_value: 2.0
     type: float
   outputs:
   - name: results
