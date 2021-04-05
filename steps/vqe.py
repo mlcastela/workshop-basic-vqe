@@ -57,15 +57,7 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
     else:
         coefficients_dict = coefficients
 
-    
-
-    test = {
-        "min_value": {
-            "min_value": min_value,
-            "max_value": max_value,
-        },
-    }    
-
+    MinMax_dict = yaml.load(MinMax, Loader=yaml.SafeLoader)
 
     # Build the circuits
     theta = Parameter("θ")
@@ -96,6 +88,7 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
         "min_value": min_value,
         "min_value": max_value,
         "results": results,
+        "MinMax_dict": MinMax_dict,
         "values": values.tolist(),
     }
 
