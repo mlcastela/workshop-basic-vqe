@@ -56,7 +56,9 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
         coefficients_dict = yaml.load(coefficients, Loader=yaml.SafeLoader)
     else:
         coefficients_dict = coefficients
-
+        
+    min_value = yaml.load(min_value, Loader=yaml.SafeLoader)
+    max_value = yaml.load(max_value, Loader=yaml.SafeLoader)
 
     # Build the circuits
     theta = Parameter("θ")
@@ -70,8 +72,8 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
         theta,
         circuits,
         coefficients_dict,
-        min_value=coefficients_dict['value']['min_value'],
-        max_value=coefficients_dict['value']['max_value'],
+        min_value=min_value,
+        max_value=max_value,
     )
 
     # Find the index of the minimum energy
@@ -87,7 +89,6 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
         "min_value": min_value,
         "min_value": max_value,
         "results": results,
-        # "MinMax_dict": MinMax_dict,
         "values": values.tolist(),
     }
 
@@ -126,7 +127,7 @@ def search(
     for v in values:
         energy = 0
         # Loop over each coefficient
-        for k, coef in coefficients.items()[:-2]:
+        for k, coef in coefficients.items():
             # Skip if the coefficient is 0
             if coef == 0:
                 continue
