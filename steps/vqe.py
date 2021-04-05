@@ -12,6 +12,7 @@ from zquantum.core.interfaces.backend import QuantumBackend
 # build_ansatz creates the ansatz for our VQE
 def build_ansatz(param: Parameter) -> QuantumCircuit:
     ansatz = QuantumCircuit(1, 1)
+    ansatz.ry(param, 0)
     # MISSING
 
     return ansatz
