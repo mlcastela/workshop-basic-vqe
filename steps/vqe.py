@@ -62,6 +62,9 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
         minmax_dict = yaml.load(MinMax, Loader=yaml.SafeLoader)
     else:
         minmax_dict = MinMax
+
+    with open("jojo.json", "w") as f:
+        f.write(json.dumps("Hello man", indent=2))
     # Build the min_value and max_value we passed to the step
     # if isinstance(MinMax, str):
     #     values_dict = yaml.load(MinMax, Loader=yaml.SafeLoader)
