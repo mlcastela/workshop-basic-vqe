@@ -43,6 +43,10 @@ steps:
       z: 4
       i: 2  
     type: coefficients 
+  - values: 
+      min: 2
+      max: 4
+    type: values
   outputs:
   - name: results
     type: output
