@@ -45,7 +45,7 @@ steps:
     type: coefficients 
   - values: 
       min: 0
-      max: 2 * np.pi
+      max: 2 
     type: values
   outputs:
   - name: results
@@ -54,4 +54,5 @@ steps:
 types:
 - specs
 - coefficients
+- values
 - output

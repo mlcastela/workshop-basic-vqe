@@ -60,7 +60,6 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
     # Build the min_value and max_value we passed to the step
     if isinstance(values, str):
         values_dict = yaml.load(values, Loader=yaml.SafeLoader)
-        print(values_dict)
     else:
         values_dict = values
 
@@ -77,7 +76,7 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
         circuits,
         coefficients_dict,
         min_value=values_dict["min"],
-        max_value=values_dict["min"],
+        max_value=values_dict["max"],
     )
 
     # Find the index of the minimum energy
