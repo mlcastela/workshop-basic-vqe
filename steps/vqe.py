@@ -70,8 +70,8 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
         theta,
         circuits,
         coefficients_dict,
-        min_value=coefficients_dict['min_value'],
-        max_value=coefficients_dict['max_value'],
+        min_value=coefficients_dict['value']['min_value'],
+        max_value=coefficients_dict['value']['max_value'],
     )
 
     # Find the index of the minimum energy
