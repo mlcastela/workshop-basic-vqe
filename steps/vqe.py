@@ -57,6 +57,18 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi):
     else:
         coefficients_dict = coefficients
 
+    
+
+    test = {
+        "min_value": {
+            "min_value": min_value,
+            "max_value": max_value,
+        },
+    }    
+    with open("jojo.json", "w") as f:
+        json.dump(test, f)
+
+
     # Build the circuits
     theta = Parameter("θ")
     ansatz = build_ansatz(theta)
