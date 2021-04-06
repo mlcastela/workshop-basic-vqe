@@ -47,8 +47,8 @@ steps:
     type: float
   - max_value: 2.0
     type: float
-  - GoodNightMessage: "Sleep well bitch"
-    type: string
+  - dummy_var: 10.0
+    type: float  
   outputs:
   - name: results
     type: output

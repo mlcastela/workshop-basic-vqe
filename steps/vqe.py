@@ -43,7 +43,7 @@ def build_circuits() -> Dict[str, QuantumCircuit]:
 # coefficients is the coefficients of the Hamiltonian we are interested in
 # min_value: value to start our search
 # max_value: value to end our search
-def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi, GoodNightMessage):
+def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi, dummy_var=50.0):
     # Build a backend from the specs we passed to the step
     if isinstance(backend_specs, str):
         backend_specs_dict = yaml.load(backend_specs, Loader=yaml.SafeLoader)
@@ -84,9 +84,9 @@ def vqe(backend_specs, coefficients, min_value=0, max_value=2 * np.pi, GoodNight
             "value": results[minimum_idx],
             "theta": values[minimum_idx],
         },
-        "message": GoodNightMessage,
         "Max": max_value,
         "Min": min_value,
+        "DummyVar": dummy_var,
         "results": results,
         "values": values.tolist(),
     }
