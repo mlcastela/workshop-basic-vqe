@@ -44,7 +44,7 @@ steps:
   - backend_specs:
       module_name: qeforest.simulator
       function_name: ForestSimulator
-      device_name: wavefunction-simulator
+      # device_name: wavefunction-simulator
     type: specs
   # Coefficients of our Hamiltonian
   - coefficients: 
